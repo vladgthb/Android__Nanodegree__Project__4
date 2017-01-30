@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">JokeDisplayLib</string>
+    <string name="joke_text">Programmer(noun.)
+A machine that turns coffee into code</string>
+</resources>
