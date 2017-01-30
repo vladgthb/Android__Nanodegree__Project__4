@@ -1,11 +1,14 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.castingmob.jokedisplaylib.DisplayJokeActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -14,6 +17,9 @@ import com.google.android.gms.ads.AdView;
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment {
+
+    public boolean testFlag = false;
+    public String loadedJoke = null;
 
     public MainActivityFragment() {
     }
@@ -32,5 +38,15 @@ public class MainActivityFragment extends Fragment {
                 .build();
         mAdView.loadAd(adRequest);
         return root;
+    }
+
+    public void launchDisplayJokeActivity(){
+        if (!testFlag) {
+            Context context = getActivity();
+            Intent intent = new Intent(context, DisplayJokeActivity.class);
+            intent.putExtra(context.getString(R.string.joke_text), loadedJoke);
+            //Toast.makeText(context, loadedJoke, Toast.LENGTH_LONG).show();
+            context.startActivity(intent);
+        }
     }
 }

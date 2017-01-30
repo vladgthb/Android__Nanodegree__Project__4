@@ -6,6 +6,7 @@
 
 package com.example.Danelyan.myapplication.backend;
 
+import com.example.Joke;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
@@ -34,6 +35,14 @@ public class MyEndpoint {
         MyBean response = new MyBean();
         response.setData("Hi, " + name);
 
+        return response;
+    }
+
+    @ApiMethod(name = "tellJoke")
+    public MyBean tellJoke(){
+        MyBean response = new MyBean();
+        Joke joker = new Joke();
+        response.setData(joker.tellJoke());
         return response;
     }
 

@@ -50,9 +50,11 @@ public class MainActivity extends AppCompatActivity {
         // Step 1
         //        Toast.makeText(this, theJoke.tellJoke(), Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, DisplayJokeActivity.class);
-        intent.putExtra(getString(R.string.joke_text), theJoke.tellJoke());
-        startActivity(intent);
+//        Intent intent = new Intent(this, DisplayJokeActivity.class);
+//        intent.putExtra(getString(R.string.joke_text), theJoke.tellJoke());
+//        startActivity(intent);
+
+        new EndpointAsyncTask().execute(this);
     }
 
 
