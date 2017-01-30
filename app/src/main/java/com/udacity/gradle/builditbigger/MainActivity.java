@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
 
-        Joke theJoke = new Joke();
+//        Joke theJoke = new Joke();
         // Uncomment This Line For Step 0
         // Step 1
         //        Toast.makeText(this, theJoke.tellJoke(), Toast.LENGTH_SHORT).show();
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 //        intent.putExtra(getString(R.string.joke_text), theJoke.tellJoke());
 //        startActivity(intent);
 
-        new EndpointAsyncTask().execute(this);
+//        new EndpointAsyncTask().execute(this);
     }
 
 
